@@ -1,0 +1,17 @@
+#!name=My Custom Rule
+#!desc=我自己特殊处理定义的一些分流规则。
+# 仓库地址：https://github.com/AgentOpenAI/Shadowrocket-ADBlock-Rules-Forever
+
+[Rule]
+# gemini\google送中修改
+DOMAIN-SUFFIX,www.google.com,解决谷歌送中
+DOMAIN-SUFFIX,jules.google.com,解决谷歌送中
+DOMAIN-SUFFIX,gemini.google.com,解决谷歌送中
+DOMAIN-SUFFIX,googleapis.com,解决谷歌送中
+DOMAIN-SUFFIX,app-analytics-services.com,解决谷歌送中
+DOMAIN-SUFFIX,labs.google,解决谷歌送中
+DOMAIN-SUFFIX,aistudio.google.com,解决谷歌送中
+DOMAIN-SUFFIX,alkalimakersuite-pa.clients6.google.com,解决谷歌送中
+
+# 免费vps签到续订直连
+DOMAIN-SUFFIX,freecloud.ltd,DIRECT
