@@ -1,0 +1,18 @@
+#!name=Traffic Logger (流量抓包上传记录)
+#!desc=记录指定 API 的请求与响应数据，并异步上传Worker。请在下方配置你的服务器 API 地址和鉴权密钥。
+#!arguments=serverUrl:请填入你的接口地址, authToken:请填入你的 AUTH_SECRET 安全鉴权密钥, pattern:请填入你的域名匹配正则
+#!arguments-desc=必须填写\n\n· 抓包日志上传接口地址\n\n· AUTH_SECRET 安全鉴权密钥\n\n· pattern匹配一定要输入正则匹配不然无效，大部分问题出在没匹配上。
+
+[Script]
+# 拦截【请求】并上传
+# pattern：替换为你想要监听的目标 API 的正则表达式，例如我想拦截 google.com 的所有请求，出问题一定是pattern正则写的问题。
+# argument={{{serverUrl}}}|||{{{authToken}}} 会自动将 URL 和 Token 拼接传给 JS 脚本
+TargetAPI_Req = type=http-request,pattern={{{pattern}}},script-path=https://raw.githubusercontent.com/AgentOpenAI/Shadowrocket-ADBlock-Rules-Forever/refs/heads/release/js/TrafficLogger.js,requires-body=1,argument={{{serverUrl}}}|||{{{authToken}}},timeout=10
+
+# 拦截【响应】并上传
+TargetAPI_Res = type=http-response,pattern={{{pattern}}},script-path=https://raw.githubusercontent.com/AgentOpenAI/Shadowrocket-ADBlock-Rules-Forever/refs/heads/release/js/TrafficLogger.js,requires-body=1,argument={{{serverUrl}}}|||{{{authToken}}},timeout=10
+
+[MITM]
+# 确保开启了 HTTPS 解密，并在此处加上你要监听的域名。这里先不拦截，需要拦截的域名去 HTTPS 解密 动态配置。
+# hostname = %APPEND% *.google.com
+
