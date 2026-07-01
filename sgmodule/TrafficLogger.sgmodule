@@ -1,7 +1,7 @@
 #!name=Traffic Logger (流量抓包上传记录)
 #!desc=记录指定 API 的请求与响应数据，并异步上传Worker。请在下方配置你的服务器 API 地址和鉴权密钥。
-#!arguments=serverUrl:请填入你的接口地址, authToken:请填入你的 AUTH_SECRET 安全鉴权密钥, pattern:请填入你的域名匹配正则
-#!arguments-desc=必须填写\n\n· 抓包日志上传接口地址\n\n· AUTH_SECRET 安全鉴权密钥\n\n· pattern匹配一定要输入正则匹配不然无效，大部分问题出在没匹配上。
+#!arguments=serverUrl:请填入你的接口地址, authToken:请填入你的 AUTH_SECRET 安全鉴权密钥, pattern:请填入你的域名匹配正则, hostname:请输入MITM拦截的域名
+#!arguments-desc=必须填写\n\n· serverUrl 抓包日志上传接口地址\n\n· authToken 安全鉴权密钥\n\n· pattern 执行脚本匹配一定要输入正则，不然无效，大部分问题出在没匹配上！！！参考：^https?:\/\/.*(google|chatgpt)\.com\/.*\n\n· hostname MITM拦截的域名，多个用逗号分割。参考：*.google.com, *.chatgpt.com
 
 [Script]
 # 拦截【请求】并上传
@@ -14,5 +14,5 @@ TargetAPI_Res = type=http-response,pattern={{{pattern}}},script-path=https://raw
 
 [MITM]
 # 确保开启了 HTTPS 解密，并在此处加上你要监听的域名。这里先不拦截，需要拦截的域名去 HTTPS 解密 动态配置。
-# hostname = %APPEND% *.google.com
+hostname = %APPEND% {{{hostname}}}
 
