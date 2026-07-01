@@ -12,7 +12,7 @@ const args = typeof $argument !== "undefined" ? $argument : "";
 const [serverUrl, authToken] = args.split('|||');
 
 // 发通知，测试用。
-// $notification.post("主标题", "副标题", `通知内容 serverUrl: ${serverUrl}    authToken: ${authToken}`);
+$notification.post("主标题", "副标题", `通知内容 serverUrl: ${serverUrl}    authToken: ${authToken}`);
 
 if (!serverUrl) {
     console.log("❌ 错误: 未配置目标服务器 URL 参数");
@@ -21,6 +21,7 @@ if (!serverUrl) {
 
 // 2. 防护机制：如果拦截的请求本身就是发给日志服务器的，直接放行
 if ($request.url.includes(serverUrl)) {
+    console.log("❌ 错误: 拦截到自身放行");
     $done({});
 }
 
