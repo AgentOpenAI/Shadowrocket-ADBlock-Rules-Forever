@@ -13,6 +13,6 @@ TargetAPI_Req = type=http-request,pattern={{{pattern}}},script-path=https://raw.
 TargetAPI_Res = type=http-response,pattern={{{pattern}}},script-path=https://raw.githubusercontent.com/AgentOpenAI/Shadowrocket-ADBlock-Rules-Forever/refs/heads/release/js/TrafficLogger.js,requires-body=1,argument={{{serverUrl}}}|||{{{authToken}}},timeout=10
 
 [MITM]
-# 确保开启了 HTTPS 解密，并在此处加上你要监听的域名。这里先不拦截，需要拦截的域名去 HTTPS 解密 动态配置。
+# 确保开启了 HTTPS 解密，并在此处加上你要监听的域名。
 hostname = %APPEND% {{{hostname}}}
 
