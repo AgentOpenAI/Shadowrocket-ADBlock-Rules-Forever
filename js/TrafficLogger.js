@@ -12,7 +12,7 @@ const args = typeof $argument !== "undefined" ? $argument : "";
 const [serverUrl, authToken] = args.split('|||');
 
 // 发通知，测试用。
-$notification.post("主标题", "副标题", `通知内容 serverUrl: ${serverUrl}    authToken: ${authToken}`);
+// $notification.post("主标题", "副标题", `通知内容 serverUrl: ${serverUrl}    authToken: ${authToken}`);
 
 if (!serverUrl) {
     console.log("❌ 错误: 未配置目标服务器 URL 参数");
