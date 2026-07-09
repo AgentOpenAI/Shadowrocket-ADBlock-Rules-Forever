@@ -4,6 +4,7 @@
 
 [Rule]
 # gemini\google送中修改
+DOMAIN-SUFFIX,*.google.com,解决谷歌送中
 DOMAIN-SUFFIX,www.google.com,解决谷歌送中
 DOMAIN-SUFFIX,jules.google.com,解决谷歌送中
 DOMAIN-SUFFIX,gemini.google.com,解决谷歌送中
