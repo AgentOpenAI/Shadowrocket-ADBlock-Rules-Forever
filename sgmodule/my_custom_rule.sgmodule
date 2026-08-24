@@ -14,7 +14,7 @@ DOMAIN-SUFFIX,labs.google,解决谷歌送中
 DOMAIN-SUFFIX,aistudio.google.com,解决谷歌送中
 DOMAIN-SUFFIX,alkalimakersuite-pa.clients6.google.com,解决谷歌送中
 
-# 苹果推送通知telegram无法收到下发的解决
+# 苹果推送通知telegram无法收到通知的解决
 DOMAIN-SUFFIX,push.apple.com,PROXY
 
 # 免费vps签到续订直连
