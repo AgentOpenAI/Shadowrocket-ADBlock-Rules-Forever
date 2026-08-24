@@ -16,3 +16,6 @@ DOMAIN-SUFFIX,alkalimakersuite-pa.clients6.google.com,解决谷歌送中
 
 # 免费vps签到续订直连
 DOMAIN-SUFFIX,freecloud.ltd,DIRECT
+# 甲骨文服务直连
+DOMAIN-SUFFIX,oracle.com,DIRECT
+
