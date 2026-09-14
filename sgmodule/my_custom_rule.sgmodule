@@ -21,4 +21,4 @@ DOMAIN-SUFFIX,push.apple.com,PROXY
 DOMAIN-SUFFIX,freecloud.ltd,DIRECT
 # 甲骨文服务直连
 DOMAIN-SUFFIX,oracle.com,DIRECT
-
+DOMAIN-SUFFIX,oraclecloud.com,DIRECT
