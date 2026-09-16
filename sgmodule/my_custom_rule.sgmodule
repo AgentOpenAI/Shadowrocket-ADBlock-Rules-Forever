@@ -22,3 +22,7 @@ DOMAIN-SUFFIX,freecloud.ltd,DIRECT
 # 甲骨文服务直连
 DOMAIN-SUFFIX,oracle.com,DIRECT
 DOMAIN-SUFFIX,oraclecloud.com,DIRECT
+# Tailscale组网
+DOMAIN-SUFFIX,ts.net,TAILSCALE
+IP-CIDR,100.64.0.0/10,TAILSCALE,no-resolve
+IP-CIDR,fd7a:115c:a1e0::/48,TAILSCALE,no-resolve
